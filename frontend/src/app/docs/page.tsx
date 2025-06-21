@@ -43,12 +43,18 @@ export default function DocsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#0f0f10] via-[#101822] to-[#05080f] text-white p-8 flex flex-col items-center justify-start">
+    <main className="min-h-screen 
+    bg-gradient-to-br from-[#0f0f10] via-[#101822] to-[#05080f] 
+    text-white 
+    p-8 flex flex-col 
+    items-center justify-start">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-5xl font-extrabold bg-gradient-to-r from-purple-500 via-blue-400 to-teal-300 text-transparent bg-clip-text drop-shadow mb-6"
+        className="text-5xl font-extrabold 
+        bg-gradient-to-r from-purple-500 via-blue-400 to-teal-300 
+        text-transparent bg-clip-text drop-shadow mb-6"
       >
          NeuraX Docs
       </motion.h1>
@@ -58,7 +64,8 @@ export default function DocsPage() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-white/10 shadow-md w-full max-w-2xl mb-8"
+        className="bg-white/5 backdrop-blur-lg p-6 rounded-2xl border
+         border-white/10 shadow-md w-full max-w-2xl mb-8"
       >
         <input
           type="file"
@@ -86,7 +93,8 @@ export default function DocsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-white/10 shadow-md w-full max-w-3xl mb-8"
+          className="bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-white/10 
+          shadow-md w-full max-w-3xl mb-8"
         >
           <h2 className="text-xl font-bold text-accent mb-2"> Summary</h2>
           <p className="text-stone-300 whitespace-pre-wrap">{summary}</p>
