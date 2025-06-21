@@ -1,8 +1,10 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Typewriter } from 'react-simple-typewriter'
 import Link from 'next/link'
+import Preloader from '@/preloader'
 
 const features = [
   {
@@ -17,16 +19,23 @@ const features = [
     image: '/docs.gif',
     href: '/docs',
   },
-  {
-    name: 'Automator',
-    desc: 'Trigger AI-powered workflow agent.',
-    image: '/automator.gif',
-    href: '/automator',
-  },
 ]
 
 export default function HomePage() {
-  return (
+    const [loading, setLoading] = useState(true)
+    
+    
+    useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false)
+    }, 1800) // Adjust the delay as needed
+    return () => clearTimeout(timeout)
+  }, [])
+
+  return (<>
+  {loading ?(
+    <Preloader/>
+  ):(
     <main className="
     bg-[radial-gradient(circle_at_center,_#0f0f10,_#05050a,_#0d1a2b)] 
     flex 
@@ -66,7 +75,7 @@ export default function HomePage() {
       <div className="
       grid 
       grid-cols-1 
-      md:grid-cols-3 
+      md:grid-cols-2 
       gap-8 
       max-w-6xl
       w-full
@@ -104,6 +113,7 @@ export default function HomePage() {
           </Link>
         ))}
       </div>
-    </main>
+    </main>)}
+    </>
   )
 }

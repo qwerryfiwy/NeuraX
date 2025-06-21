@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation'
 const tabs = [
   { name: 'assistant', label: ' Assistant' },
   { name: 'docs', label: ' Docs' },
-  { name: 'automator', label: ' Automator' },
 ]
 
 export default function AnimatedHeader() {

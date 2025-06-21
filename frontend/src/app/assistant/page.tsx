@@ -11,14 +11,35 @@ export default function Assistant() {
   ])
   const [input, setInput] = useState('')
 
-  const handleSend = () => {
-    if (!input.trim()) return
-    const userMsg = { role: 'user', text: input }
-    const botMsg = { role: 'ai', text: "I'm thinking..." }
+ const handleSend = async () => {
+  if (!input.trim()) return;
 
-    setMessages((prev) => [...prev, userMsg, botMsg])
-    setInput('')
+  const userMsg = { role: 'user', text: input };
+  setMessages(prev => [...prev, userMsg]);
+  setInput('');
+
+  setMessages(prev => [...prev, { role: 'ai', text: ' Thinking...' }]);
+
+  try {
+    const res = await fetch('http://localhost:8001/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt: input }),
+    });
+
+    const data = await res.json();
+    
+    setMessages(prev => [
+      ...prev.slice(0, -1),
+      { role: 'ai', text: data.reply }
+    ]);
+  } catch (err) {
+    setMessages(prev => [
+      ...prev.slice(0, -1),
+      { role: 'ai', text: ' Error: Failed to fetch from backend.' }
+    ]);
   }
+};
 
 const bottomRef = useRef<HTMLDivElement>(null)
 
@@ -28,7 +49,7 @@ useEffect(() => {
 
 
   return (
-    <div className="flex flex-col h-screen bg-background text-white px-4 py-6">
+    <div className="flex flex-col h-screen bg-background text-white px-4 py-6 overflow-hidden w-[100%]">
       <h1 className="text-3xl font-bold mb-4 text-accent text-center"> NeuraX Assistant</h1>
 
       <div className="flex-1 

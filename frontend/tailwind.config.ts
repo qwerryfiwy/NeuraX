@@ -12,7 +12,7 @@ const config: Config = {
   transformOrigin: {
     'center': 'center',
   },
-      colors: {
+  colors: {
   background: '#0e0e10',
   surface: '#0f1c2e',
   deep: '#060f1b',
