@@ -9,7 +9,6 @@ import numpy as np
 import faiss
 import pickle
 
-# ========= CONFIG =========
 load_dotenv()
 
 VECTOR_DB_DIR = "vector_db"
@@ -33,7 +32,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ========= UTILS =========
 def save_vector_store(embeddings, chunks):
     dim = len(embeddings[0])
     index = faiss.IndexFlatL2(dim)
@@ -53,11 +51,9 @@ def load_vector_store():
 
     return index, chunks
 
-# ========= MODELS =========
 class PromptRequest(BaseModel):
     prompt: str
 
-# ========= ROUTES =========
 
 @app.post("/ask")
 async def ask(request: PromptRequest):
