@@ -40,15 +40,16 @@ Works offline, remembers your doc, and responds fast.
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
-| Layer       | Tech Used                                |
-|-------------|-------------------------------------------|
-|  Frontend  | Next.js, TailwindCSS, Framer Motion, TypeScript |
-|  Backend   | FastAPI, Python, Azure OpenAI GPT-4o       |
-|  Embedding | Azure OpenAI Embeddings (text-embedding-ada-002) |
-|  Vector DB | FAISS + local persistence                 |
-|  Security  | .env-based API key management             |
+| Layer       | Tech Used                                                                 |
+|-------------|---------------------------------------------------------------------------|
+| Frontend    | [Next.js](https://nextjs.org/docs), [TailwindCSS](https://tailwindcss.com/docs), [Framer Motion](https://www.framer.com/motion/), [TypeScript](https://www.typescriptlang.org/docs/) |
+| Backend     | [FastAPI](https://fastapi.tiangolo.com/), [Python](https://docs.python.org/3/), [Azure OpenAI GPT-4o](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/overview) |
+| Embedding   | [Azure OpenAI Embeddings](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/use-embeddings) |
+| Vector DB   | [FAISS](https://github.com/facebookresearch/faiss) + [Pickle](https://docs.python.org/3/library/pickle.html) for local persistence |
+| Security    | [.env-based Key Management](https://12factor.net/config) ([dotenv for Python](https://pypi.org/project/python-dotenv/), [dotenv for Next.js](https://nextjs.org/docs/basic-features/environment-variables)) |
+
 
 ---
 
