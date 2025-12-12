@@ -61,15 +61,15 @@ export default function HomePage() {
       </motion.h1>
 
       <p className="text-xl mb-10 text-muted text-center">
-        <Typewriter
-          words={['Your AI Assistant', 'Your Document Brain', 'Your Automation Wizard']}
-          loop={0}
-          cursor
-          cursorStyle="|"
-          typeSpeed={50}
-          deleteSpeed={30}
-          delaySpeed={1500}
-        />
+          <Typewriter
+            words={['Your AI Assistant', 'Your Document Brain', 'Your Automation Wizard']}
+            loop={0}
+            cursor
+            cursorStyle="|"
+            typeSpeed={50}
+            deleteSpeed={30}
+            delaySpeed={1500}
+          />
       </p>
 
       <div className="

@@ -30,7 +30,7 @@ app.add_middleware(
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
-)
+)#IDK BABE
 
 def save_vector_store(embeddings, chunks):
     dim = len(embeddings[0])
